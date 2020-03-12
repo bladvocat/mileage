@@ -1,0 +1,230 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      List of all flights
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h2>
+      Add a new flight
+    </h2>
+
+    <form action="/insert_flight" method="post">
+      <div class="form-group">
+        <label for="passenger_id_box">
+          Passenger
+        </label>
+
+        <input type="text" id="passenger_id_box" name="query_passenger_id" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="from_airport_box">
+          From airport
+        </label>
+
+        <input type="text" id="from_airport_box" name="query_from_airport" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="to_airport_box">
+          To airport
+        </label>
+
+        <input type="text" id="to_airport_box" name="query_to_airport" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="date_departure_box">
+          Date departure
+        </label>
+
+        <input type="date" id="date_departure_box" name="query_date_departure" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="booking_reference_box">
+          Booking reference
+        </label>
+
+        <input type="text" id="booking_reference_box" name="query_booking_reference" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="program_name_box">
+          Program name
+        </label>
+
+        <input type="text" id="program_name_box" name="query_program_name" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="mileage_program_id_box">
+          Mileage program
+        </label>
+
+        <input type="text" id="mileage_program_id_box" name="query_mileage_program_id" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="number_of_miles_box">
+          Number of miles
+        </label>
+
+        <input type="text" id="number_of_miles_box" name="query_number_of_miles" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="date_of_expiry_box">
+          Date of expiry
+        </label>
+
+        <input type="date" id="date_of_expiry_box" name="query_date_of_expiry" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="description_box">
+          Description
+        </label>
+
+        <textarea id="description_box" name="query_description" class="form-control" rows="3"></textarea>
+      </div>
+
+      <button class="btn btn-block btn-outline-secondary">
+        Create flight
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Passenger
+        </th>
+
+        <th>
+          From airport
+        </th>
+
+        <th>
+          To airport
+        </th>
+
+        <th>
+          Date departure
+        </th>
+
+        <th>
+          Booking reference
+        </th>
+
+        <th>
+          Program name
+        </th>
+
+        <th>
+          Mileage program
+        </th>
+
+        <th>
+          Number of miles
+        </th>
+
+        <th>
+          Date of expiry
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @flights.each do |flight| %>
+      <tr>
+        <td>
+          <%= flight.id %>
+        </td>
+
+        <td>
+          <%= flight.passenger_id %>
+        </td>
+
+        <td>
+          <%= flight.from_airport %>
+        </td>
+
+        <td>
+          <%= flight.to_airport %>
+        </td>
+
+        <td>
+          <%= flight.date_departure %>
+        </td>
+
+        <td>
+          <%= flight.booking_reference %>
+        </td>
+
+        <td>
+          <%= flight.program_name %>
+        </td>
+
+        <td>
+          <%= flight.mileage_program_id %>
+        </td>
+
+        <td>
+          <%= flight.number_of_miles %>
+        </td>
+
+        <td>
+          <%= flight.date_of_expiry %>
+        </td>
+
+        <td>
+          <%= flight.description %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(flight.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(flight.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/flights/<%= flight.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
