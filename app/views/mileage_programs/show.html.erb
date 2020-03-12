@@ -1,0 +1,71 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Mileage program #<%= @mileage_program.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/mileage_programs" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_mileage_program/<%= @mileage_program.id %>" class="btn btn-block btn-outline-secondary">
+          Delete mileage program
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Program name
+      </dt>
+      <dd>
+        <%= @mileage_program.program_name %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@mileage_program.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@mileage_program.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h2>
+      Edit mileage program
+    </h2>
+
+    <form action="/modify_mileage_program/<%= @mileage_program.id %>"  method="post" >
+      <div class="form-group">
+        <label for="program_name_box">
+          Program name
+        </label>
+
+        <input type="text" id="program_name_box" name="query_program_name" class="form-control" value="<%= @mileage_program.program_name %>">
+      </div>
+
+      <button class="btn btn-block btn-outline-secondary">
+        Update mileage program
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

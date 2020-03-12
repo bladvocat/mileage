@@ -2,6 +2,25 @@ Rails.application.routes.draw do
 
 
 
+  # Routes for the Mileage program resource:
+
+  # CREATE
+  post("/insert_mileage_program", { :controller => "mileage_programs", :action => "create" })
+          
+  # READ
+  get("/mileage_programs", { :controller => "mileage_programs", :action => "index" })
+  
+  get("/mileage_programs/:path_id", { :controller => "mileage_programs", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_mileage_program/:path_id", { :controller => "mileage_programs", :action => "update" })
+  
+  # DELETE
+  get("/delete_mileage_program/:path_id", { :controller => "mileage_programs", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Flight resource:
 
   # CREATE

@@ -18,4 +18,6 @@
 #
 
 class Flight < ApplicationRecord
+  belongs_to :passenger
+  belongs_to :program, :class_name => "MileageProgram", :foreign_key => "mileage_program_id"
 end

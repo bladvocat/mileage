@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_12_161442) do
+ActiveRecord::Schema.define(version: 2020_03_12_162220) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -49,6 +49,12 @@ ActiveRecord::Schema.define(version: 2020_03_12_161442) do
     t.integer "number_of_miles"
     t.date "date_of_expiry"
     t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "mileage_programs", force: :cascade do |t|
+    t.string "program_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

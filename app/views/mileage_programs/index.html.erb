@@ -1,0 +1,86 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      List of all mileage programs
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h2>
+      Add a new mileage program
+    </h2>
+
+    <form action="/insert_mileage_program" method="post">
+      <div class="form-group">
+        <label for="program_name_box">
+          Program name
+        </label>
+
+        <input type="text" id="program_name_box" name="query_program_name" class="form-control">
+      </div>
+
+      <button class="btn btn-block btn-outline-secondary">
+        Create mileage program
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Program name
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @mileage_programs.each do |mileage_program| %>
+      <tr>
+        <td>
+          <%= mileage_program.id %>
+        </td>
+
+        <td>
+          <%= mileage_program.program_name %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(mileage_program.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(mileage_program.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/mileage_programs/<%= mileage_program.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
