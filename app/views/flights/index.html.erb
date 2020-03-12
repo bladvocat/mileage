@@ -15,14 +15,7 @@
     </h2>
 
     <form action="/insert_flight" method="post">
-      <div class="form-group">
-        <label for="passenger_id_box">
-          Passenger
-        </label>
-
-        <input type="text" id="passenger_id_box" name="query_passenger_id" class="form-control">
-      </div>
-
+      
       <div class="form-group">
         <label for="from_airport_box">
           From airport
@@ -63,14 +56,7 @@
         <input type="text" id="program_name_box" name="query_program_name" class="form-control">
       </div>
 
-      <div class="form-group">
-        <label for="mileage_program_id_box">
-          Mileage program
-        </label>
-
-        <input type="text" id="mileage_program_id_box" name="query_mileage_program_id" class="form-control">
-      </div>
-
+      
       <div class="form-group">
         <label for="number_of_miles_box">
           Number of miles
@@ -151,13 +137,7 @@
           Description
         </th>
 
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
+        
 
         <th>
         </th>
@@ -209,12 +189,7 @@
           <%= flight.description %>
         </td>
 
-        <td>
-          <%= time_ago_in_words(flight.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(flight.updated_at) %> ago
-        </td>
+        
 
         <td>
           <a href="/flights/<%= flight.id %>">

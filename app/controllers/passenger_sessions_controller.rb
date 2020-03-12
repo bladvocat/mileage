@@ -1,5 +1,5 @@
 class PassengerSessionsController < ApplicationController
-  # skip_before_action(:force_passenger_sign_in, { :only => [:new_session_form, :create_cookie] })
+  skip_before_action(:force_passenger_sign_in, { :only => [:new_session_form, :create_cookie] })
 
   def new_session_form
     render({ :template => "passenger_sessions/sign_in.html.erb" })

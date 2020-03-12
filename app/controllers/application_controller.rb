@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action(:load_current_passenger)
   
-  # before_action(:force_passenger_sign_in)
+  before_action(:force_passenger_sign_in)
   
   def load_current_passenger
     the_id = session.fetch(:passenger_id)
