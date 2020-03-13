@@ -173,7 +173,13 @@
         </td>
 
         <td>
-          <%= distance_of_time_in_words(Time.current, flight.date_of_expiry) %> left
+          <%= if flight.date_of_expiry < Date.today
+              status = "Expired"
+              else 
+              status = distance_of_time_in_words(Time.current, flight.date_of_expiry).to_s
+              end
+
+            %>
         </td>
 
         <td>
