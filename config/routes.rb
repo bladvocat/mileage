@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+get("/", { :controller => "flights", :action => "index" })
 
   # Routes for the Mileage program resource:
 

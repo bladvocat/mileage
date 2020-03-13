@@ -14,13 +14,11 @@ class FlightsController < ApplicationController
 
   def create
     @flight = Flight.new
-    @flight.passenger_id = params.fetch("query_passenger_id")
     @flight.from_airport = params.fetch("query_from_airport")
     @flight.to_airport = params.fetch("query_to_airport")
     @flight.date_departure = params.fetch("query_date_departure")
     @flight.booking_reference = params.fetch("query_booking_reference")
     @flight.program_name = params.fetch("query_program_name")
-    @flight.mileage_program_id = params.fetch("query_mileage_program_id")
     @flight.number_of_miles = params.fetch("query_number_of_miles")
     @flight.date_of_expiry = params.fetch("query_date_of_expiry")
     @flight.description = params.fetch("query_description")
