@@ -61,12 +61,7 @@
         <%= @flight.program_name %>
       </dd>
 
-      <dt>
-        Mileage program
-      </dt>
-      <dd>
-        <%= @flight.mileage_program_id %>
-      </dd>
+      
 
       <dt>
         Number of miles
@@ -89,19 +84,7 @@
         <%= @flight.description %>
       </dd>
 
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@flight.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@flight.updated_at) %> ago
-      </dd>
+      
     </dl>
   </div>
 </div>
@@ -164,13 +147,7 @@
         <input type="text" id="program_name_box" name="query_program_name" class="form-control" value="<%= @flight.program_name %>">
       </div>
 
-      <div class="form-group">
-        <label for="mileage_program_id_box">
-          Mileage program
-        </label>
-
-        <input type="text" id="mileage_program_id_box" name="query_mileage_program_id" class="form-control" value="<%= @flight.mileage_program_id %>">
-      </div>
+     
 
       <div class="form-group">
         <label for="number_of_miles_box">
