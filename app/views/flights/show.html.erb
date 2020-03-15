@@ -19,12 +19,7 @@
     </div>
 
     <dl>
-      <dt>
-        Passenger
-      </dt>
-      <dd>
-        <%= @flight.passenger_id %>
-      </dd>
+      
 
       <dt>
         From airport
@@ -99,13 +94,7 @@
     </h2>
 
     <form action="/modify_flight/<%= @flight.id %>"  method="post" >
-      <div class="form-group">
-        <label for="passenger_id_box">
-          Passenger
-        </label>
-
-        <input type="text" id="passenger_id_box" name="query_passenger_id" class="form-control" value="<%= @flight.passenger_id %>">
-      </div>
+      
 
       <div class="form-group">
         <label for="from_airport_box">
